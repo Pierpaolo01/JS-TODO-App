@@ -6,31 +6,45 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Todo app</title>
+  <title>Todo app</title> 
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Todo
+  
+  <div class="container">
+    <div class="top-row-flex">
+       <h1>T O - D O </h1> 
+       <img src="/images/icon-sun.svg" alt="light-mode">
+    </div>
+ 
+    <div class="input-field-div">
+ 
+      <input type="checkbox" name="enter-todo">
+      <textarea name="input-todo" id="input-todo" cols="35" rows="3" placeholder="Enter your Todo Item here"></textarea>  
+    </div>
 
-  <!-- Add dynamic number --> items left
+    <ul class="listView">
+      <li>
+        
+      </li>
 
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    </ul>
+      
+    </div>
+  
   </div>
+
+
+
+
+
+
+  <div class="attribution"> 
+    Coded by <a href="#">Pierpaolo Pascarella</a>.
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

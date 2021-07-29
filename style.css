@@ -1,0 +1,104 @@
+
+
+body{
+    margin: 0;
+    color: white;
+    background: url(/images/bg-mobile-dark.jpg) no-repeat center top;
+    background-size: 100%;
+    background-color: #181818cc;
+    font-family: 'roboto';
+    font-style: 'bold';
+}
+
+
+.container {
+    margin: 10px auto 0  auto;
+    width: 90%;
+    align-items: center;    
+}
+
+.top-row-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.top-row-flex img{
+    width: 30px;
+    height: 30px;
+}
+
+.input-field-div, .listItem{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px auto;
+    align-items: center;
+    height: 75px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 10px 50px  #181818 ;
+   
+}
+ul{
+    list-style-type: none;
+    padding: 0; 
+}
+
+.input-field-div textarea{
+    resize:vertical;
+    margin: 10px;
+    border: none;
+    z-index: 3;
+}
+
+input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+}
+
+.listView span{
+    color: black;
+
+}
+
+.close {
+    cursor: pointer;
+    padding: 12px 16px;
+    margin-right: 5px;
+    border-radius: 8px;
+  }
+
+  .close:hover {background: #bbb;}
+
+
+
+
+
+@Media only screen and (min-width: 550px){
+
+    body{
+        background: url(/images/bg-desktop-dark.jpg) no-repeat center top;
+        background-color: #181818cc; 
+    }
+
+    .input-field-div{
+        width: 400px;
+        height: 75px;
+    }
+
+    .listItem{
+        width: 400px;
+        height: 75px;
+    }
+
+    .container{
+        margin-top: 100px;
+        max-width:650px ;
+    }
+
+
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
