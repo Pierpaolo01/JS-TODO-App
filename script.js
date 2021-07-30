@@ -37,20 +37,22 @@ function getNewItem(){
 }
 
 function appendListItems(){
-    let listContainer = document.createElement('div');
+    // let listContainer = document.createElement('div');
+
+
     
 
-    if(todoArray.length > 1){
+    // if(todoArray.length > 1){
 
-        list.removeChild(listContainer);
+    //     list.removeChild(listContainer);
 
-    }
+    // }
 
     for(let i=0; i < todoArray.length; i++){
 
         todoArray[i].id = i;
-        
-        liContainer = document.createElement('div');
+
+        let liContainer = document.createElement('div');
         liContainer.setAttribute('class', 'listItem');
         let completionCheckbox = document.createElement('input');
         completionCheckbox.setAttribute('type', 'checkbox');
@@ -69,7 +71,7 @@ function appendListItems(){
 
         liContainer.appendChild(deleteSpan);
 
-        listContainer.appendChild(liContainer);
+        list.appendChild(liContainer);
 
     }
 
