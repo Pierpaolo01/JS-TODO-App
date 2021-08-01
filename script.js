@@ -3,76 +3,71 @@
 let enterCheckbox = document.querySelector('input[name="enter-todo"]');
 enterCheckbox.addEventListener('click', getNewItem);
 
-let list = document.querySelector('li');
+let unorderedList = document.querySelector('.listView');
 
-
-
-
-let todoArray = [
-
-];
 
 
 function getNewItem(){
-    if(enterCheckbox.checked === true){ //&& document.queryselector('enter-todo').textContent checks if it's empty
-
-        todoArray.push(
-            {value: document.querySelector('#input-todo').value, 
-            state: true,
-            id : ''}
-        );
-
-        let list = document.querySelector('ul');
-
+    //checks if the checkbox OR enter key is press AND that there's content within
+    if(enterCheckbox.checked === true){
         
-           appendListItems();
+        appendListItem(document.querySelector('#input-todo').value);
 
-
-        
-
-        console.log(todoArray);
-    }else if(enterCheckbox.checked === false){
+    }else if(enterCheckbox.checked === false){//once checkbox is unmarked, resets. 
         document.querySelector('#input-todo').value = '';
     }
 }
 
-function appendListItems(){
-    // let listContainer = document.createElement('div');
 
+function appendListItem(todoItem){
 
-    
+    let todoID = unorderedList.getElementsByTagName('li').length;
 
-    // if(todoArray.length > 1){
+    let listItem = document.createElement('li');
+    listItem.setAttribute('id', 'li'+todoID);
 
-    //     list.removeChild(listContainer);
+    let liContainer = document.createElement('div');
+    liContainer.setAttribute('class', 'listItem');
+    liContainer.setAttribute('id', 'div' + todoID);
+    let completionCheckbox = document.createElement('input');
+    completionCheckbox.setAttribute('type', 'checkbox');
+    completionCheckbox.setAttribute('name', 'name'+todoID);
+    completionCheckbox.setAttribute('onClick', 'completeTodoItem(this)');
+    let todoContent = document.createElement('span');
+    todoContent.textContent = todoItem;
+    let deleteSpan = document.createElement('span');
+    deleteSpan.setAttribute('id', todoID);
+    deleteSpan.setAttribute('class', 'close');
+    deleteSpan.setAttribute('onClick', 'deleteTodoItem(this)');
+    deleteSpan.textContent = "X";
 
-    // }
-
-    for(let i=0; i < todoArray.length; i++){
-
-        todoArray[i].id = i;
-
-        let liContainer = document.createElement('div');
-        liContainer.setAttribute('class', 'listItem');
-        let completionCheckbox = document.createElement('input');
-        completionCheckbox.setAttribute('type', 'checkbox');
-        completionCheckbox.setAttribute('name', i);
-        let todoContent = document.createElement('span');
-        todoContent.textContent = todoArray[i].value;
-        let deleteSpan = document.createElement('span');
-        deleteSpan.setAttribute('id', i);
-        deleteSpan.setAttribute('class', 'close');
-        deleteSpan.textContent = "X";
-
-
-        liContainer.appendChild(completionCheckbox);
-
-        liContainer.appendChild(todoContent);
-
-        liContainer.appendChild(deleteSpan);
-
-        list.appendChild(liContainer);
-
-    }
+    liContainer.appendChild(completionCheckbox);
+    liContainer.appendChild(todoContent);
+    liContainer.appendChild(deleteSpan);
+    listItem.appendChild(liContainer);
+    unorderedList.appendChild(listItem);
 
 }
+
+function completeTodoItem(item){
+    
+    let completionCheckbox = document.querySelector('input[name='+item.name+']');
+    let parentElem = completionCheckbox.parentElement;
+    console.log(parentElem);
+    if (completionCheckbox.checked === true){
+        parentElem.querySelector('span').style.textDecoration = 'line-through';
+        
+    }else{
+        parentElem.querySelector('span').style.textDecoration = 'none';
+    }
+}
+
+function deleteTodoItem(item){
+
+    unorderedList.querySelector('#li' +item.id).remove();
+    // let del = document.querySelector(item.id);
+    // let parentElement = del.parentElement;
+
+
+}
+
