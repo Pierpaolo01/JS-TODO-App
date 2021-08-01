@@ -65,9 +65,6 @@ function completeTodoItem(item){
 function deleteTodoItem(item){
 
     unorderedList.querySelector('#li' +item.id).remove();
-    // let del = document.querySelector(item.id);
-    // let parentElement = del.parentElement;
-
 
 }
 
