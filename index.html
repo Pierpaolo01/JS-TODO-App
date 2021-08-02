@@ -16,10 +16,10 @@
   <div class="container">
     <div class="top-row-flex">
        <h1>T O - D O </h1> 
-       <img src="/images/icon-sun.svg" alt="light-mode">
+       <img onclick="ChangeColorMode(this);" src="/images/icon-sun.svg" alt="dark-mode">
     </div>
  
-    <div class="input-field-div">
+    <div class="input-field-div toggle">
  
       <input type="checkbox" name="enter-todo">
       <textarea name="input-todo" id="input-todo" cols="35" rows="3" placeholder="Enter your Todo Item here"></textarea>  
@@ -27,12 +27,12 @@
 
     <ul id="ulList" class="listView"></ul>
 
-    <div class="listItem, selector-field-div">
+    <div class="listItem selector-field-div toggle">
       <span id="itemCount">...Itmes remaining</span>
       <span class="spanItems" onclick="clearChecked();">Clear completed</span>
     </div>
 
-    <div class="listItem, filter">
+    <div class="listItem filter toggle">
       <span onclick="showAll();" class="spanItems">All</span>
       <span onclick="showActive();" class="spanItems">active</span>
       <span onclick="showCompleted();" class="spanItems">Completed</span>
@@ -51,7 +51,9 @@
 
 
   <div class="attribution"> 
-    Coded by <a href="#">Pierpaolo Pascarella</a>.
+    <span>
+      Coded by <a href="#">Pierpaolo Pascarella</a>.
+    </span>
   </div>
 
   <script src="script.js"></script>

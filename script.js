@@ -8,13 +8,15 @@ let unorderedList = document.querySelector('.listView');
 
 
 function getNewItem(){
-    if(enterCheckbox.checked === true){
-        
-        appendListItem(document.querySelector('#input-todo').value);
+            appendListItem(document.querySelector('#input-todo').value);
         updateCounter();
-    }else if(enterCheckbox.checked === false){//once checkbox is unmarked, resets. 
+        if(document.querySelector('img').alt === 'light-mode'){
+            ChangeColorMode('newItem');
+        }
+
+        enterCheckbox.checked = false;
         document.querySelector('#input-todo').value = '';
-    }
+
 }
 
 
@@ -26,7 +28,7 @@ function appendListItem(todoItem){
     listItem.setAttribute('id', 'li'+todoID);
 
     let liContainer = document.createElement('div');
-    liContainer.setAttribute('class', 'listItem liView');
+    liContainer.setAttribute('class', 'listItem liView toggle');
     liContainer.setAttribute('id', 'div' + todoID);
     let completionCheckbox = document.createElement('input');
     completionCheckbox.setAttribute('type', 'checkbox');
@@ -171,4 +173,51 @@ function showAll(){
         }
 
 
+}
+
+function ChangeColorMode(theme){
+    let themeImg = document.querySelector('img');
+    let bgImg = document.querySelector('body');
+    let divs = document.querySelectorAll('.toggle');
+    let texts = document.querySelectorAll('span');
+
+
+    if(theme.alt === 'dark-mode'){
+        themeImg.src = '/images/icon-moon.svg';
+        theme.alt = 'light-mode';
+        bgImg.style.background = 'url(/images/bg-mobile-light.jpg) no-repeat center top';
+        bgImg.style.backgroundSize = '100%';
+        bgImg.style.backgroundColor = '#666666';
+        //for loop changes color of ALL divs
+        for(let i=0; i < divs.length; i++){
+            divs[i].style.backgroundColor = '#F2F1F0';
+        }
+
+        for(let i=0; i < texts.length; i++){
+            texts[i].style.color = '#000000';
+        }
+        
+    }else if (theme === 'newItem'){
+        for(let i=0; i < divs.length; i++){
+            divs[i].style.backgroundColor = '#F2F1F0';
+        }
+        for(let i=0; i < texts.length; i++){
+            texts[i].style.color = '#000000';
+        }
+    }else if(theme.alt === 'light-mode'){
+        themeImg.src = '/images/icon-sun.svg';
+        theme.alt = 'dark-mode';
+        bgImg.style.background = '';
+        bgImg.style.backgroundSize = '';
+        bgImg.style.backgroundColor = '';
+        //for loop changes color of ALL divs
+        for(let i=0; i < divs.length; i++){
+            divs[i].style.backgroundColor = '';
+        }
+        for(let i=0; i < texts.length; i++){
+            texts[i].style.color = '#FFFFFF';
+        }
+
+    }
+    
 }
