@@ -10,6 +10,10 @@ body{
     font-style: 'bold';
 }
 
+span {
+    color: black;
+}
+
 
 .container {
     margin: 10px auto 0  auto;
@@ -27,7 +31,7 @@ body{
     height: 30px;
 }
 
-.input-field-div, .listItem{
+.input-field-div, .listItem, .selector-field-div, .filter{
     display: flex;
     justify-content: space-between;
     margin: 25px auto;
@@ -35,9 +39,38 @@ body{
     height: 75px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0px 10px 50px  #181818 ;
+    box-shadow: 0px 16px 50px 5px #181818; ;
    
 }
+
+.listItem, .selector-field-div{
+    margin: 0px;
+    box-shadow: none;
+    border-radius: 0px;
+    z-index: 2;
+}
+
+.selector-field-div{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    border-radius: 0 0 10px 10px;
+}
+
+.selector-field-div span {
+    margin: 5px 10px;
+    font-size: 15px;
+}
+
+.filter {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.filter span {
+    margin: 15px;
+}
+
 ul{
     list-style-type: none;
     padding: 0; 
@@ -55,8 +88,10 @@ input[type='checkbox'] {
     height: 30px;
 }
 
-.listView span{
-    color: black;
+.listView{
+  
+    margin: 0;
+    z-index: 2;
 
 }
 
@@ -68,6 +103,13 @@ input[type='checkbox'] {
   }
 
   .close:hover {background: #bbb;}
+
+  .spanItems:hover{
+    background-color: #18181850;
+    box-shadow: 0px 0px 0px 15px #18181850;
+    border-radius: 10px;
+
+  }
 
 
 
