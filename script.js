@@ -26,7 +26,7 @@ function appendListItem(todoItem){
     listItem.setAttribute('id', 'li'+todoID);
 
     let liContainer = document.createElement('div');
-    liContainer.setAttribute('class', 'listItem');
+    liContainer.setAttribute('class', 'listItem liView');
     liContainer.setAttribute('id', 'div' + todoID);
     let completionCheckbox = document.createElement('input');
     completionCheckbox.setAttribute('type', 'checkbox');
@@ -112,12 +112,63 @@ function clearChecked(){
             liRemove.parentElement.remove();
         }
 
-
-
-    
+        showAll()
 }
 
 function showCompleted(){
+
+    let ulLength = unorderedList.childElementCount;
     
+    for(let i=0; i < ulLength; i++){
+    
+            let completionCheckbox = unorderedList.childNodes[i].querySelector('input[type="checkbox"]');
+            if(completionCheckbox){
+                if(completionCheckbox.checked === false){
+                    let hideParent = completionCheckbox.parentElement;
+                    hideParent.style.display = 'none';
+                }else if(completionCheckbox.checked === true){
+                    let hideParent = completionCheckbox.parentElement;
+                    hideParent.style.display = 'flex';
+                }
+            }
+        }
+
+
+}
+
+function showActive(){
+
+    let ulLength = unorderedList.childElementCount;
+
+    for(let i=0; i < ulLength; i++){
+    
+            let completionCheckbox = unorderedList.childNodes[i].querySelector('input[type="checkbox"]');
+            if(completionCheckbox){
+                if(completionCheckbox.checked === true){
+                    let hideParent = completionCheckbox.parentElement;
+                    hideParent.style.display = 'none';
+
+                }else if(completionCheckbox.checked === false){
+                    let hideParent = completionCheckbox.parentElement;
+                    hideParent.style.display = 'flex';
+                }
+            }
+        }
+
+
+}
+
+function showAll(){
+
+    let ulLength = unorderedList.childElementCount;
+
+    for(let i=0; i < ulLength; i++){
+    
+            let liContainer = unorderedList.childNodes[i].querySelector('li, div');
+            liContainer.style.display = 'flex';
+            liContainer.setAttribute('class', 'listItem');
+
+        }
+
 
 }
