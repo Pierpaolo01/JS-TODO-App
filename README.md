@@ -2,12 +2,14 @@
 ![screenshot of end product](design/desktop-preview.jpg)
 
 
+- Live Site URL: [Live site demonstration](pierpaolo01.github.io/js-todo-app/)
+
+
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -35,10 +37,6 @@ Users should be able to:
 
 ![screenshot of end product](design/mobile-design-dark.jpg)
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](pierpaolo01.github.io/js-todo-app/)
 
 ## My process
 
