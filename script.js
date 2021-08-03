@@ -187,10 +187,10 @@ function ChangeColorMode(theme){
         themeImg.src = '/images/icon-moon.svg';
         theme.alt = 'light-mode';
 
-        bgImg.style.background = 'url(/images/bg-mobile-light.jpg) no-repeat center top';
+        bgImg.style.background = 'url(images/bg-mobile-light.jpg) no-repeat center top';
         
         if(matchMedia.matches){
-            bgImg.style.background = 'url(/images/bg-desktop-light.jpg) no-repeat center top';
+            bgImg.style.background = 'url(images/bg-desktop-light.jpg) no-repeat center top';
         }
 
 
