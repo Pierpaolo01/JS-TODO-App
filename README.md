@@ -62,8 +62,4 @@ With JS I learned alot about DOM manipulation and JS can interact with the HTML,
 Since I used this project to refresh my javascript skills after a prolonged period, there are a handfull of things I would like to itterate, such as streamling my code more to fit the latest 'best-practices' and using more of the latest feaures of ES6, like arrow functions. 
 I also did not get the opportunity to practice more advaced conecpts that JS has to offer like recursive functions.
 
-<<<<<<< HEAD
 I did get the chance to experiment with closures, and the lexical scope of variables within functions.
-=======
-I did get the chance to experiment with closures, and the lexical scope of variables within functions.
->>>>>>> b13ab5543f9d968e80ba4b17be8a1420c47d5969
