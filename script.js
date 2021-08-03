@@ -180,12 +180,20 @@ function ChangeColorMode(theme){
     let bgImg = document.querySelector('body');
     let divs = document.querySelectorAll('.toggle');
     let texts = document.querySelectorAll('span');
+    let matchMedia = window.matchMedia('(min-width: 550px)');
 
 
     if(theme.alt === 'dark-mode'){
         themeImg.src = '/images/icon-moon.svg';
         theme.alt = 'light-mode';
+
         bgImg.style.background = 'url(/images/bg-mobile-light.jpg) no-repeat center top';
+        
+        if(matchMedia.matches){
+            bgImg.style.background = 'url(/images/bg-desktop-light.jpg) no-repeat center top';
+        }
+
+
         bgImg.style.backgroundSize = '100%';
         bgImg.style.backgroundColor = '#666666';
         //for loop changes color of ALL divs
