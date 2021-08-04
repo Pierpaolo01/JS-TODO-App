@@ -213,7 +213,7 @@ function ChangeColorMode(theme){
             texts[i].style.color = '#000000';
         }
     }else if(theme.alt === 'light-mode'){
-        themeImg.src = '/images/icon-sun.svg';
+        themeImg.src = 'images/icon-sun.svg';
         theme.alt = 'dark-mode';
         bgImg.style.background = '';
         bgImg.style.backgroundSize = '';
