@@ -184,7 +184,7 @@ function ChangeColorMode(theme){
 
 
     if(theme.alt === 'dark-mode'){
-        themeImg.src = '/images/icon-moon.svg';
+        themeImg.src = 'images/icon-moon.svg';
         theme.alt = 'light-mode';
 
         bgImg.style.background = 'url(images/bg-mobile-light.jpg) no-repeat center top';
